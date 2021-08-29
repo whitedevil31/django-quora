@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <h1>Hello {{user.username}}</h1>
+    <h1>Delete your account</h1>
+    <form method="post">
+      {% csrf_token %} {{form.as_p}}
+      <button type="submit">DELETE</button>
+    </form>
+  </body>
+</html>

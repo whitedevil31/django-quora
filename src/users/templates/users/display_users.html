@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <a href="{% url 'users:user-create'  %}">Create your account</a>
+    <a href="{% url 'questions:question-post' %}"}>post your questions</a>
+    <br />
+    {% if request.user.is_authenticated %}
+   <a href="{%url 'logout' %}?next=">LOGOUT</a>
+    {% endif %}
+    {% for user in users %}
+
+    <a href="{% url 'users:user-detail' user.pk %}">{{user.username}}</a>
+    <h2>{{user.id}}</h2>
+    {% endfor %}
+  </body>
+</html>
